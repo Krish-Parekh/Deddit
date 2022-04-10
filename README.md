@@ -18,12 +18,25 @@ The following **functionality** is completed:
 * [x] Meme API : https://github.com/D3vd/Meme_Api
 * [x] Firebase Cloud Messaging API : https://fcm.googleapis.com/fcm/send
 
-## Library 
-* [x] Glide: https://github.com/bumptech/glide
-* [x] Shimmer: https://facebook.github.io/shimmer-android/
-* [x] Retrofit: https://square.github.io/retrofit/ 
-* [x] Dagger-Hilt: https://dagger.dev/hilt/  
-* [x] Lottie : https://lottiefiles.com/
+## Tech stack & Open-source libraries
+- Minimum SDK level 26
+- [Kotlin](https://kotlinlang.org/) based, [Coroutines](https://github.com/Kotlin/kotlinx.coroutines) + [Flow](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/) for asynchronous.
+- [Hilt](https://dagger.dev/hilt/) for dependency injection.
+- Jetpack
+  - Lifecycle - Observe Android lifecycles and handle UI states upon the lifecycle changes.
+  - ViewModel - Manages UI-related data holder and lifecycle aware. Allows data to survive configuration changes such as screen rotations.
+  - DataBinding - Binds UI components in your layouts to data sources in your app using a declarative format rather than programmatically.
+  - Paging3 -  It has support for requesting the next page to load more data automatically.
+  - Work Manager - WorkManager is intended for tasks that require a guarantee that the system will run them even if the app exits.
+- Architecture
+  - MVVM Architecture (View - DataBinding - ViewModel - Model)
+  - Repository Pattern
+- [Retrofit2 & OkHttp3](https://github.com/square/retrofit) - Construct the REST APIs.
+- [Moshi](https://github.com/square/moshi/) - A modern JSON library for Kotlin and Java.
+- [Glide](https://github.com/bumptech/glide) - Loading images from network.
+- [Material-Components](https://github.com/material-components/material-components-android) - Material design components for building ripple animation, and Cardview 
+- [Shimmer-Layout](https://facebook.github.io/shimmer-android/) - The motive of using the Shimmer layout is to inform the user that the structure is currently loading.
+- [Lottie](https://lottiefiles.com/) - Lottie file is a JSON-based animation filet that enables developers to implement animations on any platform as easily as implementing static assets.
 
 ## Video Walkthrough
 
