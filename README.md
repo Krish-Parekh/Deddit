@@ -1,6 +1,6 @@
 # Deddit
 <p align="center">  
-🗡️ Deddit demonstrates modern Android development with Hilt, Coroutines, Flow, Jetpack (Room, ViewModel,Paging3), and Material Design based on MVVM architecture.
+🗡️ Deddit demonstrates modern Android development with Hilt, Coroutines, Flow, Jetpack (ViewModel,Paging3), and Material Design based on MVVM architecture.
 </p>
 
 
@@ -11,6 +11,7 @@ The following **functionality** is completed:
 * [x] Explore Memes from reddit
 * [x] Apply filter to enjoy best subreddits 
 * [x] Notification using **Firebase Cloud Messaging** 
+* [x] Paginating data 
 * [x] **Download** and **Share** your meme 
 
 ## API
