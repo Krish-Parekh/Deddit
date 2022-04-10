@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Android Practice/Meme/app/src/main/res/drawable/circle.xml" value="0.2135" />
+        <entry key="..\:/Android Practice/Meme/app/src/main/res/drawable/ic_error_placeholder.xml" value="0.325" />
+        <entry key="..\:/Android Practice/Meme/app/src/main/res/drawable/round.xml" value="0.2135" />
+        <entry key="..\:/Android Practice/Meme/app/src/main/res/drawable/round_meme.xml" value="0.2135" />
+        <entry key="..\:/Android Practice/Meme/app/src/main/res/drawable/search_view_bg.xml" value="0.3525" />
+        <entry key="..\:/Android Practice/Meme/app/src/main/res/drawable/share.xml" value="0.3525" />
+        <entry key="..\:/Android Practice/Meme/app/src/main/res/layout/activity_main.xml" value="0.2477355072463768" />
+        <entry key="..\:/Android Practice/Meme/app/src/main/res/layout/error_state.xml" value="0.1" />
+        <entry key="..\:/Android Practice/Meme/app/src/main/res/layout/fragment_bottom_sheet.xml" value="0.11376858435681965" />
+        <entry key="..\:/Android Practice/Meme/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Android Practice/Meme/app/src/main/res/layout/fragment_home_bottom_sheet.xml" value="0.222052067381317" />
+        <entry key="..\:/Android Practice/Meme/app/src/main/res/layout/row_layout.xml" value="0.33" />
+        <entry key="..\:/Android Practice/Meme/app/src/main/res/layout/shimmer_layout.xml" value="0.33" />
+        <entry key="..\:/Android Practice/Meme/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.223" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

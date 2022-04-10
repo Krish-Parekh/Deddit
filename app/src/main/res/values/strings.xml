@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Meme</string>
+    <string name="subreddit">Subreddit</string>
+    <string name="likes">Likes</string>
+    <string name="author">Author</string>
+    <string name="nsfw">NSFW</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search">Search</string>
+    <string name="change_subreddit">Change Subreddit</string>
+    <string name="meme">meme</string>
+    <string name="dankmeme">dankmeme</string>
+    <string name="okbuddyretard">okbuddyretard</string>
+    <string name="comedymemes">comedymemes</string>
+    <string name="pewdiepiesubmissions">pewdiepiesubmissions</string>
+    <string name="chodi">chodi</string>
+    <string name="dankinindia">dankinindia</string>
+    <string name="recommended_subreddit">Recommended Subreddit</string>
+    <string name="apply">Apply</string>
+    <string name="error_message">This subreddit has no posts or does\'t exist.</string>
+</resources>
