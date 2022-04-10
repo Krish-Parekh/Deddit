@@ -1,4 +1,8 @@
 # Deddit
+<p align="center">  
+🗡️ Deddit demonstrates modern Android development with Hilt, Coroutines, Flow, Jetpack (Room, ViewModel,Paging3), and Material Design based on MVVM architecture.
+</p>
+
 
 ## Functionality  
 
