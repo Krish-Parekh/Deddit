@@ -47,3 +47,9 @@ Deddit                      |
 
 https://user-images.githubusercontent.com/73629899/162626022-632a0fe5-81cd-46e8-8ae9-d2e5a0bceaae.mp4 
 
+
+## Architecture
+Deddit is based on the MVVM architecture and the Repository pattern.
+
+![architecture](https://user-images.githubusercontent.com/24237865/77502018-f7d36000-6e9c-11ea-92b0-1097240c8689.png)
+
