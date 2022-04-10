@@ -1,5 +1,14 @@
 # Deddit
 
+## Functionality  
+
+The following **functionality** is completed:
+
+* [x] Explore Memes from reddit
+* [x] Apply filter to enjoy best subreddits 
+* [x] Notification using **Firebase Cloud Messaging** 
+* [x] **Download** and **Share** your meme 
+
 ## API
 * [x] Meme API : https://github.com/D3vd/Meme_Api
 * [x] Firebase Cloud Messaging API : https://fcm.googleapis.com/fcm/send
@@ -13,7 +22,7 @@
 
 ## Video Walkthrough
 
-Light Mode             |
+Deddit                      |
 :-------------------------:|
 
 
