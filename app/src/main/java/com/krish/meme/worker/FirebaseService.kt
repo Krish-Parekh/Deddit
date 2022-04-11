@@ -1,5 +1,6 @@
 package com.krish.meme.worker
 
+import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
@@ -8,8 +9,11 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
+import android.graphics.drawable.BitmapDrawable
 import android.util.Log
 import androidx.core.app.NotificationCompat
+import androidx.core.content.res.ResourcesCompat
+import com.bumptech.glide.load.engine.Resource
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 import com.krish.meme.Constants.Companion.CHANNEL_ID
@@ -21,6 +25,11 @@ import kotlin.random.Random
 private const val TAG = "FirebaseService"
 
 class FirebaseService : FirebaseMessagingService() {
+
+    override fun onNewToken(token: String) {
+        super.onNewToken(token)
+    }
+
     override fun onMessageReceived(message: RemoteMessage) {
         super.onMessageReceived(message)
         Log.d(TAG, "onMessageReceived: ${message.data}")
@@ -38,17 +47,24 @@ class FirebaseService : FirebaseMessagingService() {
         createNotificationChannel(notificationManager)
 
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+
+        val bigPictureStyle = NotificationCompat.BigPictureStyle()
+            .bigPicture(bitmap)
+            .setBigContentTitle(message.data["title"])
+            .setSummaryText(message.data["message"])
+
         val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT)
         val notification = NotificationCompat.Builder(this, CHANNEL_ID)
             .setContentTitle(message.data["title"])
             .setContentText(message.data["message"])
             .setSmallIcon(R.drawable.ic_launcher_background)
             .setAutoCancel(true)
-            .setLargeIcon(bitmap)
+            .setStyle(bigPictureStyle)
             .setContentIntent(pendingIntent)
             .build()
 
         notificationManager.notify(notificationID, notification)
+
     }
     private fun createNotificationChannel(notificationManager: NotificationManager) {
         val channelName = "channelName"
