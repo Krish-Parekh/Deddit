@@ -6,6 +6,6 @@ class Constants {
         const val CLOUD_BASE_URL = "https://fcm.googleapis.com/"
         const val MEME_BASE_URL = "https://meme-api.herokuapp.com/gimme/"
         const val SERVER_KEY = "YOUR_SERVER_KEY"
-        const val CONTENT_TYPE = "application/json"
+        const val CONTENT_TYPE = "application/jsom"
     }
 }
