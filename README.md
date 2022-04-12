@@ -28,7 +28,7 @@ The following **functionality** is completed:
   - DataBinding - Binds UI components in your layouts to data sources in your app using a declarative format rather than programmatically.
   - Paging3 -  It has support for requesting the next page to load more data automatically.
   - Work Manager - WorkManager is intended for tasks that require a guarantee that the system will run them even if the app exits.
-  - DataStore - Jetpack DataStore is a data storage solution. It allows us to store key-value pairs **(like SharedPreferences)**
+  - DataStore - DataStore preference is a data storage solution. It allows us to store key-value pairs **(like SharedPreferences)**
 - Architecture
   - MVVM Architecture (View - DataBinding - ViewModel - Model)
   - Repository Pattern
