@@ -42,6 +42,7 @@ class WorkerUtils @Inject constructor(@Notification private val notificationServ
     }
 
     private fun sentNotification(notification: PushNotification) {
+        Log.d(TAG, "sentNotification: ")
         CoroutineScope(Dispatchers.IO).launch {
             try {
                 val response = notificationService.postNotification(notification)

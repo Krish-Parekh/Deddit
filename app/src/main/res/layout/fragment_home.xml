@@ -71,15 +71,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:fontFamily="@font/poppins_medium"
+        android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="16sp"
-        android:fontFamily="@font/poppins_medium"
         android:visibility="invisible"
         app:layout_constraintLeft_toLeftOf="@+id/not_found"
         app:layout_constraintRight_toRightOf="@+id/not_found"
-        app:layout_constraintTop_toBottomOf="@+id/not_found"
-        android:textAlignment="center"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/not_found" />
+
+    <TextView
+        android:id="@+id/error_reload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Reload ?"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="@+id/error_message"
+        app:layout_constraintRight_toRightOf="@+id/error_message"
+        app:layout_constraintTop_toBottomOf="@+id/error_message" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/changeSubreddit"

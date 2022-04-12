@@ -15,12 +15,8 @@
             app:destination="@id/homeBottomSheet"
             app:popUpTo="@id/homeBottomSheet"
             app:popUpToInclusive="true" />
-        <argument
-            android:name="subreddit"
-            app:argType="string"
-            app:nullable="true"
-            android:defaultValue="meme" />
     </fragment>
+
     <dialog
         android:id="@+id/homeBottomSheet"
         android:name="com.krish.meme.ui.homeFragment.bottomSheetFragment.HomeBottomSheet"

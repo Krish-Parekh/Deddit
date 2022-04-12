@@ -64,8 +64,8 @@ class FirebaseService : FirebaseMessagingService() {
             .build()
 
         notificationManager.notify(notificationID, notification)
-
     }
+        
     private fun createNotificationChannel(notificationManager: NotificationManager) {
         val channelName = "channelName"
         val channel = NotificationChannel(

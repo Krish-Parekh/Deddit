@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
+import com.krish.meme.R
 import com.krish.meme.databinding.FragmentHomeBottomSheetBinding
 import com.krish.meme.viewModel.MainViewModel
 
@@ -51,8 +52,9 @@ class HomeBottomSheet : BottomSheetDialogFragment() {
         binding.applyBtn.setOnClickListener {
             val subName = binding.subredditEt.text.toString()
             if (subName.isNotBlank()) {
-                val action = HomeBottomSheetDirections.actionHomeBottomSheetToHomeFragment(subName)
-                findNavController().navigate(action)
+                mViewModel.tempSubredditName.value = subName
+                mViewModel.saveSubreddit()
+                findNavController().navigate(R.id.action_homeBottomSheet_to_homeFragment)
             }else {
                 Toast.makeText(requireContext(), "Please enter the subreddit before submitting", Toast.LENGTH_SHORT).show()
             }

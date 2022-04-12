@@ -19,6 +19,7 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -58,7 +59,6 @@ class HomeFragment : Fragment(), ButtonClick {
     private val mAdapter: MainListAdapter by lazy { MainListAdapter(this@HomeFragment) }
     private var writePermissionGranted = false
     private lateinit var permissionLauncher: ActivityResultLauncher<String>
-    private val args by navArgs<HomeFragmentArgs>()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -70,6 +70,7 @@ class HomeFragment : Fragment(), ButtonClick {
             }
     }
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -77,14 +78,19 @@ class HomeFragment : Fragment(), ButtonClick {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         setupRecyclerView()
+        setupPeriodicWorker()
         FirebaseMessaging.getInstance().subscribeToTopic(TOPIC)
+        mViewModel.retrieveData()
 
-        lifecycleScope.launch {
-            val subreddit = if (args.subreddit == "meme" || args.subreddit.isNullOrBlank()) "meme" else args.subreddit
-            mViewModel.postData(subreddit!!).collectLatest {
-                mAdapter.submitData(it)
+        mViewModel.subredditName.observe(viewLifecycleOwner, Observer { subreddit ->
+            lifecycleScope.launch {
+                mViewModel.postData(subreddit!!).collectLatest {
+                    mAdapter.submitData(it)
+                }
             }
-        }
+        })
+
+
 
         mAdapter.addLoadStateListener { loadState ->
 
@@ -100,27 +106,35 @@ class HomeFragment : Fragment(), ButtonClick {
                 }
                 error?.let {
                     if (it.error.message == "HTTP 404 Not Found") {
-                        binding.notFound.visibility = View.VISIBLE
-                        binding.errorMessage.visibility = View.VISIBLE
-                        binding.errorMessage.setText(R.string.error_message)
+                        handleErrorState()
+                    }
+                    else if (it.error.message == "HTTP 503 Service Unavailable"){
+                        handleErrorState()
+                    }
 
-                    }
-                    if (it.error.message == "HTTP 503 Service Unavailable"){
-                        binding.notFound.visibility = View.VISIBLE
-                        binding.errorMessage.visibility = View.VISIBLE
-                        binding.errorMessage.setText(R.string.error_message)
-                    }
+                    Log.d(TAG, it.error.message.toString())
                 }
             }
         }
-
         binding.changeSubreddit.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_homeBottomSheet)
         }
 
-        setupPeriodicWorker()
 
         return binding.root
+    }
+    private fun handleErrorState(){
+        binding.notFound.visibility = View.VISIBLE
+        binding.errorMessage.visibility = View.VISIBLE
+        binding.errorReload.visibility = View.VISIBLE
+        binding.errorMessage.setText(R.string.error_message)
+        binding.errorReload.setOnClickListener {
+            binding.notFound.visibility = View.INVISIBLE
+            binding.errorMessage.visibility = View.INVISIBLE
+            binding.errorReload.visibility = View.INVISIBLE
+            mViewModel.tempSubredditName.value = "meme"
+            mViewModel.saveSubreddit()
+        }
     }
 
     private fun setupPeriodicWorker(force: Boolean = false) {
